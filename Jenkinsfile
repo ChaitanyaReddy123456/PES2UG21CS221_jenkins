@@ -4,13 +4,13 @@ pipeline {
     stage('Build') {
       steps {
         build 'PES2UG21CS221-1'
-        sh 'gcc -o task5 main/hello.cpp'
+        sh 'g++ main/hello.cpp -o output'
         echo 'Build Successful!'
       }
     }
     stage('Test') {
       steps {
-        sh './task5'
+        sh './output'
         echo 'Test Successful!'
       }
     }
